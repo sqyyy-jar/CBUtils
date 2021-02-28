@@ -29,7 +29,7 @@ public class CommandSign implements CommandExecutor {
                 lore.add("§cSigniert von §e" + p.getName());
                 lore.add("§f" + newLore);
                 i.setItemMeta(meta);
-                p.setItemInMaindHand(i);
+                p.getInventory().setItemInMainHand(i);
                 p.sendMessage("§2Das Item wurde erfolgreich signiert!");
             }else {
                 p.sendMessage("§cBitte halte das Item, dass du signieren willst in der Haupt-Hand.");
