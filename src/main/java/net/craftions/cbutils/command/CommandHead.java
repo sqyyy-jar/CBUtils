@@ -1,5 +1,6 @@
 package net.craftions.cbutils.command;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -17,7 +18,12 @@ public class CommandHead implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(sender instanceof Player){
-
+            if(args.length == 1){
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "give " + sender.getName() + " mineccraft:player_head{SkullOwner:" + args[0] + "}");
+                sender.sendMessage("§2Du hast den Kopf von §2" + args[0] + "§2 erhalten!");
+            }else{
+                sender.sendMessage("§cBitte nutze /kopf <spielername>");
+            }
         }else {
             sender.sendMessage("You need to be a player.");
         }
