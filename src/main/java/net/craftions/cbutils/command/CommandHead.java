@@ -19,7 +19,7 @@ public class CommandHead implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(sender instanceof Player){
             if(args.length == 1){
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "give " + sender.getName() + " minecraft:player_head{SkullOwner:" + args[0] + "}");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "minecraft:give " + sender.getName() + " minecraft:player_head{SkullOwner:" + args[0] + "}");
                 sender.sendMessage("§2Du hast den Kopf von §2" + args[0] + "§2 erhalten!");
             }else{
                 sender.sendMessage("§cBitte nutze /kopf <spielername>");
