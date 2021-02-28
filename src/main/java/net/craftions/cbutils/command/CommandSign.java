@@ -17,19 +17,19 @@ public class CommandSign implements CommandExecutor {
     public boolean onCommand(@org.jetbrains.annotations.NotNull CommandSender sender, @org.jetbrains.annotations.NotNull Command command, @org.jetbrains.annotations.NotNull String label, @org.jetbrains.annotations.NotNull String[] args) {
         if(sender instanceof Player){
             Player p = (Player) sender;
-            if(p.getItemOnCursor().getType() != Material.AIR){
+            if(p.getInventory().getItemInMainHand().getType() != Material.AIR){
                 String newLore = "";
                 for(int i = 0; i < args.length; i++){
                     newLore += args[i] + "";
                 }
-                ItemStack i = p.getItemOnCursor();
+                ItemStack i = p.getInventory().getItemInMainHand();
                 ItemMeta meta = i.getItemMeta();
                 List<String> lore = new ArrayList<>();
                 lore.add("");
                 lore.add("§cSigniert von §e" + p.getName());
                 lore.add("§f" + newLore);
                 i.setItemMeta(meta);
-                p.setItemOnCursor(i);
+                p.setItemInMaindHand(i);
                 p.sendMessage("§2Das Item wurde erfolgreich signiert!");
             }else {
                 p.sendMessage("§cBitte halte das Item, dass du signieren willst in der Haupt-Hand.");
