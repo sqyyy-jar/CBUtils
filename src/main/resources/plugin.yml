@@ -1,0 +1,5 @@
+name: CBUtils
+version: ${project.version}
+main: net.craftions.cbutils.CBUtils
+api-version: 1.15
+authors: [ MCTzOCK ]
