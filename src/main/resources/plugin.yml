@@ -3,3 +3,10 @@ version: ${project.version}
 main: net.craftions.cbutils.CBUtils
 api-version: 1.15
 authors: [ MCTzOCK ]
+commands:
+  signieren:
+    permission: craftions.cbutils.command.sign
+    usage: /<command> <signierung>
+  kopf:
+    permission: craftions.cbutils.command.head
+    usage: /<command> <spielername>
