@@ -20,7 +20,7 @@ public class CommandSign implements CommandExecutor {
             if(p.getInventory().getItemInMainHand().getType() != Material.AIR){
                 String newLore = "";
                 for(int i = 0; i < args.length; i++){
-                    newLore += args[i] + "";
+                    newLore += args[i] + " ";
                 }
                 ItemStack i = p.getInventory().getItemInMainHand();
                 ItemMeta meta = i.getItemMeta();
