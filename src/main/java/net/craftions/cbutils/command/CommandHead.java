@@ -15,7 +15,7 @@ public class CommandHead implements CommandExecutor {
         if(sender instanceof Player){
             if(CBUtils.econ.getBalance((Player) sender) >= 100){
                 if(args.length == 1){
-                    CBUtils.econ.depositPlayer((Player) sender, -100);
+                    CBUtils.econ.withdrawPlayer((Player) sender, 100);
                     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "minecraft:give " + sender.getName() + " minecraft:player_head{SkullOwner:" + args[0] + "}");
                     sender.sendMessage("§2Du hast den Kopf von §2" + args[0] + "§2 erhalten!");
                 }else{
