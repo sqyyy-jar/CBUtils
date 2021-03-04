@@ -10,6 +10,3 @@ commands:
   kopf:
     permission: craftions.cbutils.command.head
     usage: /<command> <spielername>
-  plotsettings:
-    permission: craftions.cbutils.command.settings
-    usage: /<command> [args...]
