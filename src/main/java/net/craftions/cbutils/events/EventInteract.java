@@ -21,9 +21,10 @@ public class EventInteract implements Listener {
                 if(sign.getLine(0).equals("[§aShop§r]")){
                     Material mat = Material.valueOf(sign.getLine(1));
                     int cost = Integer.parseInt(sign.getLine(2));
+                    int amount = Integer.parseInt(sign.getLine(3));
                     if(CBUtils.econ.getBalance(e.getPlayer()) >= cost){
                         CBUtils.econ.withdrawPlayer(e.getPlayer(), cost);
-                        e.getPlayer().getInventory().addItem(new ItemStack(mat));
+                        e.getPlayer().getInventory().addItem(new ItemStack(mat, amount));
                     }else {
                         e.getPlayer().sendMessage("§cDu brauchst mindestens §e$ " + cost);
                     }
