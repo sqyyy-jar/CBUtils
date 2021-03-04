@@ -2,7 +2,10 @@ package net.craftions.cbutils;
 
 import net.craftions.cbutils.command.CommandHead;
 import net.craftions.cbutils.command.CommandSign;
+import net.craftions.cbutils.events.EventInteract;
+import net.craftions.cbutils.events.EventSignChange;
 import net.milkbowl.vault.economy.Economy;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -15,6 +18,8 @@ public final class CBUtils extends JavaPlugin {
         setupEconomy();
         getCommand("signieren").setExecutor(new CommandSign());
         getCommand("kopf").setExecutor(new CommandHead());
+        Bukkit.getPluginManager().registerEvents(new EventSignChange(), this);
+        Bukkit.getPluginManager().registerEvents(new EventInteract(), this);
     }
 
     @Override
