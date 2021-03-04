@@ -19,8 +19,7 @@ public class CommandPlotSettings implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            Location plotLocation = new Location(p.getWorld().getName(), (int) p.getLocation().getX(), (int) p.getLocation().getY(), (int) p.getLocation().getZ());
-            Plot plot = new PlotAPI().getPlotSquared().getApplicablePlotArea(plotLocation).getPlot(plotLocation);
+            Plot plot = Plot.getPlot(new Location(p.getWorld().getName(), p.getLocation().getBlockX(), p.getLocation().getBlockY(), p.getLocation().getBlockZ()));
             sender.sendMessage(String.valueOf(plot.getId()));
         }else {
             sender.sendMessage("you need to be a player");
