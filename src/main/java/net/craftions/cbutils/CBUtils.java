@@ -1,6 +1,7 @@
 package net.craftions.cbutils;
 
 import net.craftions.cbutils.command.CommandHead;
+import net.craftions.cbutils.command.CommandPlotSettings;
 import net.craftions.cbutils.command.CommandSign;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -15,6 +16,7 @@ public final class CBUtils extends JavaPlugin {
         setupEconomy();
         getCommand("signieren").setExecutor(new CommandSign());
         getCommand("kopf").setExecutor(new CommandHead());
+        getCommand("plotsettings").setExecutor(new CommandPlotSettings());
 
     }
 
