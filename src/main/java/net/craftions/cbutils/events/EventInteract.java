@@ -16,9 +16,9 @@ public class EventInteract implements Listener {
     @EventHandler
     public void onInteract(PlayerInteractEvent e){
         if(e.getClickedBlock() != null){
-            if(e.getClickedBlock().getType().equals(Material.OAK_SIGN)){
+            if(e.getClickedBlock().getType().equals(Material.OAK_WALL_SIGN)){
                 Sign sign = (Sign) e.getClickedBlock().getState();
-                if(sign.getLine(0).equals("[§aShop§e]")){
+                if(sign.getLine(0).equals("[§aShop§r]")){
                     Material mat = Material.getMaterial(sign.getLine(1));
                     int cost = Integer.parseInt(sign.getLine(2));
                     if(CBUtils.econ.getBalance(e.getPlayer()) >= cost){
