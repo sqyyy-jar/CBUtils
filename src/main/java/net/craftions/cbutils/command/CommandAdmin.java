@@ -25,6 +25,7 @@ public class CommandAdmin implements CommandExecutor {
                 p.getInventory().clear();
                 p.setGameMode(GameMode.SURVIVAL);
                 p.getInventory().setContents(back.get(p).getContents());
+                p.updateInventory();
                 back.remove(p);
             }else {
                 back.put(p, p.getInventory());
