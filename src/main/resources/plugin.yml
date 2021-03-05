@@ -10,3 +10,6 @@ commands:
   kopf:
     permission: craftions.cbutils.command.head
     usage: /<command> <spielername>
+  admin:
+    permission: craftions.cbutils.command.admin
+    usage: /<command>

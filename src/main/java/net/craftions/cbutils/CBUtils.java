@@ -1,5 +1,6 @@
 package net.craftions.cbutils;
 
+import net.craftions.cbutils.command.CommandAdmin;
 import net.craftions.cbutils.command.CommandHead;
 import net.craftions.cbutils.command.CommandSign;
 import net.craftions.cbutils.events.EventInteract;
@@ -18,6 +19,7 @@ public final class CBUtils extends JavaPlugin {
         setupEconomy();
         getCommand("signieren").setExecutor(new CommandSign());
         getCommand("kopf").setExecutor(new CommandHead());
+        getCommand("admin").setExecutor(new CommandAdmin());
         Bukkit.getPluginManager().registerEvents(new EventSignChange(), this);
         Bukkit.getPluginManager().registerEvents(new EventInteract(), this);
     }
