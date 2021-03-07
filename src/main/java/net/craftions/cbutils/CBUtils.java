@@ -4,6 +4,7 @@ import net.craftions.cbutils.command.CommandAdmin;
 import net.craftions.cbutils.command.CommandHead;
 import net.craftions.cbutils.command.CommandSign;
 import net.craftions.cbutils.events.EventInteract;
+import net.craftions.cbutils.events.EventInteractEntity;
 import net.craftions.cbutils.events.EventSignChange;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
@@ -22,6 +23,7 @@ public final class CBUtils extends JavaPlugin {
         getCommand("admin").setExecutor(new CommandAdmin());
         Bukkit.getPluginManager().registerEvents(new EventSignChange(), this);
         Bukkit.getPluginManager().registerEvents(new EventInteract(), this);
+        Bukkit.getPluginManager().registerEvents(new EventInteractEntity(), this);
     }
 
     @Override
