@@ -9,13 +9,14 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 
 public class CommandAdmin implements CommandExecutor {
 
-    public static HashMap<Player, Inventory> back = new HashMap<>();
+    public static HashMap<Player, ItemStack[]> back = new HashMap<>();
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
@@ -24,11 +25,11 @@ public class CommandAdmin implements CommandExecutor {
             if(back.containsKey(p)){
                 p.getInventory().clear();
                 p.setGameMode(GameMode.SURVIVAL);
-                p.getInventory().setContents(back.get(p).getContents());
+                p.getInventory().setContents(back.get(p));
                 p.updateInventory();
                 back.remove(p);
             }else {
-                back.put(p, p.getInventory());
+                back.put(p, p.getInventory().getContents());
                 p.setGameMode(GameMode.CREATIVE);
                 p.getInventory().clear();
             }
